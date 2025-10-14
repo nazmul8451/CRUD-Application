@@ -3,5 +3,6 @@ class Urls{
   static const String readProduct = '$baseUrl/ReadProduct';
   static  String deleteProduct(String id) => '$baseUrl/DeleteProduct/$id';
 
+  static const String createProduct = '$baseUrl/CreateProduct';
 
 }

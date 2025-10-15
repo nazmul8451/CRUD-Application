@@ -11,7 +11,7 @@ class PostModel {
     required this.title,
   });
 
-
+//Json to model object এ রূপান্তর করা
   factory PostModel.fromJson (Map<String, dynamic> jsonData){
     return PostModel(
       userId: jsonData['userId'].toString(),

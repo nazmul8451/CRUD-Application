@@ -1,6 +1,6 @@
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
-import 'controller/UserPostController.dart';
+import '../controller/UserPostController.dart';
 
 class PostScreen extends StatefulWidget {
   const PostScreen({super.key});
@@ -41,7 +41,7 @@ class _PostScreenState extends State<PostScreen> {
                       style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
-                          color: Colors.black),
+                          color: Colors.blue),
                     ),
                     subtitle: Text(userPost.body),
                   ),

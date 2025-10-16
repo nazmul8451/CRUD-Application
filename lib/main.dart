@@ -1,5 +1,6 @@
 import 'package:crud/view/Crud_Screen.dart';
 import 'package:crud/controller/UserPostController.dart';
+import 'package:crud/view/bottom_nav_bar.dart';
 import 'package:crud/view/getpost_screen.dart';
 import 'package:crud/view/nested_json_persing.dart';
 import 'package:crud/view/post_screen.dart';
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: GetpostScreen(),
+      debugShowCheckedModeBanner: false,
+      home: MainNavBarScreen(),
     );
   }
 }

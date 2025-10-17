@@ -21,11 +21,19 @@ class UserController{
     }
   }
 
-  Future<UserDetailsModel> getUserDetails(String id) async{
-    final response = await get(Uri.parse(UserApi.getUserSingle(id)));
+ static Future<UserDetailsModel> getUserDetails(String id) async{
+    final response = await get(Uri.parse('${UserApi.getUserDetails}/$id'));
 
     if(response.statusCode == 200){
-      print('${response.statusCode}');
+      print('Status code: ${response.statusCode}');
+
+      final decodedData = jsonDecode(response.body);
+
+      return UserDetailsModel.fromJson(decodedData);
+
+    }else{
+      print('Error : ${response.statusCode}');
+      throw Exception('Error : ${response.statusCode}');
     }
 
   }

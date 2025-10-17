@@ -66,4 +66,38 @@ class ProductController extends ChangeNotifier {
       throw Exception('Failed to add product');
     }
   }
+
+  Future<void> updateProduct(
+      String id,
+      String productName,
+      String img,
+      int qty,
+      int unitPrice,
+      int totalPrice,)async{
+    Map<String,dynamic> requestBody = {
+      "ProductName": productName,
+      "ProductCode": DateTime.now().microsecondsSinceEpoch,
+      "Img": img,
+      "Qty": qty,
+      "UnitPrice": unitPrice,
+      "TotalPrice": totalPrice,
+    };
+    try{
+      final response = await post(Uri.parse(Urls.updateProduct(id)),
+        headers: {'Content-Type':'application/json',},
+        body: jsonEncode(requestBody),
+      );
+      if(response.statusCode == 200){
+        print('Product update Successfully');
+
+        getData();
+        notifyListeners();
+      }else{
+        print('Failed to Update Product');
+      }
+    }catch(e){
+      print('Error: $e');
+    }
+  }
+
 }

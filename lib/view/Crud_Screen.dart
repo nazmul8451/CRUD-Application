@@ -162,7 +162,7 @@ class _HomePageState extends State<HomePage> {
                 height: 150,
                 width: 100,
                 decoration: BoxDecoration(
-                  color: Colors.pinkAccent[100],
+                  color: Colors.grey[100],
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Padding(
@@ -175,7 +175,7 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(15),
                           child: Image.network(
                             height: 100,
-                            width: 100,
+                            width: 120,
                             fit: BoxFit.cover,
                             product.img.toString(),
                           ),

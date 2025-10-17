@@ -60,7 +60,12 @@ class _NestedJsonPersingState extends State<NestedJsonPersing> {
               return InkWell(
                 onTap: () => Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => UserDetailsScreen(userName: user.name,)),
+                  MaterialPageRoute(
+                    builder: (context) => UserDetailsScreen(
+                      userName: user.name,
+                      id: user.id.toString(),
+                    ),
+                  ),
                 ),
                 child: Card(
                   child: ListTile(
